@@ -9,5 +9,5 @@ FROM nginx:latest AS frontend
 WORKDIR /app
 COPY --from=builder /app/build ./usr/share/nginx/html
 COPY ./nginx/default.conf /etc/nginx/conf.d
-
+EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
